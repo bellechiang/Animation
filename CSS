@@ -1,0 +1,133 @@
+*, *::before, *::after{
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+
+	overflow: hidden;
+}
+.universe{
+	background-image:radial-gradient(#555, #000) ;
+	height: 100vh;
+
+	display: grid;
+	place-items: center;
+
+}
+
+.stars{
+	width: 100vw;
+	height:100vh;
+	background-image: url(image/stars.png);
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	animation: star-pulse 2s infinite alternate;
+}
+
+@keyframes star-pulse{
+	100% {
+opacity:0.4;
+   }
+}
+
+.sun{
+	width:200px;
+	height: 200px;
+	border-radius: 50%;
+	background-image: radial-gradient(#F5C313, #EC7E08);
+	box-shadow: 0 0 30px #F5C91A;
+	/*x位移 y位移 模糊度 顏色*/
+	
+	animation: sun-fire 2s infinite alternate;
+}
+@keyframes sun-fire {
+	100%{
+		box-shadow: 0 0 100px #F5C91A;
+	}
+}
+
+.earth_orbit{
+	width: 90vh;
+	height: 90vh;
+	border-radius: 50%;
+
+	border:2px dashed gold;
+	display: grid;
+	place-items: center;
+
+	animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+.moon_orbit{
+	width:120px;
+	height:120px;
+	border-radius: 50%;
+	border:2px dashed gold;
+	position:absolute;
+	left:calc(-120px / 2);
+	top:calc(50% - 120px / 2);
+	
+	display:grid;
+	justify-content: center;
+	align-items: center;
+
+	animation: spin 30s linear infinite;
+}
+
+.earth{
+	width:80px;
+	height:90px;
+	border-radius: 50%;
+	animation: dontspin 30s linear infinite;
+
+}
+
+@keyframes dontspin{
+	100%{
+		transform: rotate(-720deg);
+	}
+}
+
+.earth img{
+	width:80px;
+}
+
+.moon{
+	width:30px;
+	height:30px;
+	border-radius: 50%;
+	background-image: radial-gradient(#ddd, #888);
+	
+	position:absolute;
+	left:calc(-30px / 2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
